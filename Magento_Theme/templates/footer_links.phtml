@@ -1,0 +1,64 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+?>
+
+<ul class="header links">
+    <?php if($customerSession->isLoggedIn()): ?>
+        <li class="title-footer-links" >
+            Minha Conta
+        </li>
+        <li>
+            <a href="<?= $block->getUrl() ?>customer/account/" id="my-account">Conta</a>
+        </li>
+        <li class="link wishlist" data-bind="scope: 'wishlist'">
+            <a href="<?= $block->getUrl() ?>wishlist/" id="my-wishlist">Lista de desejos</a>
+        </li>
+        <li>
+            <a href="<?= $block->getUrl() ?>/sales/order/history/" id="my-orders">Pedidos</a>
+        </li>
+        <li>
+            <a href="<?= $block->getUrl() ?>customer/address/" id="my-addresses">Endereços</a>
+        </li>
+    <?php else: ?>
+        <!-- Markup portion for Logged out customer -->
+        <li class="title-footer-links" >
+            Minha Conta
+        </li>
+        <li class="link authorization-link" data-label="or">
+            <a href="<?= $block->getUrl() ?>customer/account/login/">Entre</a>
+            ou
+            <a href="<?= $block->getUrl() ?>customer/account/create/" id="create-account">Cadastre-se</a>
+        </li>
+    <?php endif; ?>
+</ul>
+<ul class="footer links">
+    <li class="title-footer-links" >
+        Institucional
+    </li>
+    <li class="nav item">
+        <a href="<?= $block->getUrl() ?>search/term/popular/">
+            Termos de Pesquisa
+        </a>
+    </li>
+    <li class="nav item">
+        <a href="<?= $block->getUrl() ?>privacy-policy-cookie-restriction-mode/">
+            Política de Privacidade e Cookies
+        </a>
+    </li>
+    <li class="nav item">
+        <a href="<?= $block->getUrl() ?>sales/guest/form/">
+            Pedidos e Devoluções
+        </a>
+    </li>
+    <li class="nav item">
+        <a href="<?= $block->getUrl() ?>contact/">
+            Fale Conosco
+        </a>
+    </li>
+    <li class="nav item">
+        <a href="<?= $block->getUrl() ?>catalogsearch/advanced/" data-action="advanced-search">
+            Pesquisa Avançada
+        </a>
+    </li>
+</ul>

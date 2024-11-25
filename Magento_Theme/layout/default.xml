@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/fontello/fontello.css"/>
+    </head>
+    <body>
+        <referenceBlock name="logo">
+            <arguments>
+                <argument name="logo_width" xsi:type="number">170</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="header.container">
+            <container name="header.content" htmlTag="div" htmlClass="header-content"/>
+            <container name="header.compare" htmlTag="div" htmlClass="header-compare" after="-">
+                <container name="compare" htmlTag="div" htmlClass="compare">
+                    <block class="Magento\Framework\View\Element\Template" name="catalog.compare.link" template="Magento_Catalog::product/compare/link.phtml" after="-">
+                        <arguments>
+                            <argument name="jsLayout" xsi:type="array">
+                                <item name="components" xsi:type="array">
+                                    <item name="compareProducts" xsi:type="array">
+                                        <item name="component" xsi:type="string">Magento_Catalog/js/view/compare-products</item>
+                                    </item>
+                                </item>
+                            </argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+        <move element="header-wrapper" destination="header.content"/>
+        <move element="top.search" destination="header-wrapper" after="logo"/>
+        <referenceBlock name="header.panel">
+            <block name="account_menu" template="Magento_Theme::account_menu.phtml"/>
+            <block class="Magento\Theme\Block\Html\Header" name="header" as="header" >
+                <arguments>
+                    <argument name="show_part" xsi:type="string">welcome</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="top.links" remove="true"/>
+        <referenceBlock name="skip_to_content" remove="true"/>
+        <referenceContainer name="footer">
+            <container name="footer.links.wrapper" htmlTag="div" htmlClass="footer-links-wrapper" after="subscribe">
+                <block name="footer.links" template="Magento_Theme::footer_links.phtml" />
+            </container>
+        </referenceContainer>
+        <referenceBlock name="footer_links" remove="true"/>
+    </body>
+</page>

@@ -1,0 +1,44 @@
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+?>
+
+<div class="panel header">
+    <!-- This markup portion is the source for Mobile View Navigation Menu -->
+    <ul class="header links">
+        <?php if($customerSession->isLoggedIn()): ?>
+            <li class="customer-welcome active">
+                <!-- Markup portion for Logged in customer -->
+                <div class="my-account-menu" >
+                    <div class="my-account-text">Minha conta</div>
+                    <div class="customer-menu" data-target="dropdown" aria-hidden="false">
+                        <ul class="header links">
+                            <li>
+                                <a href="<?= $block->getUrl() ?>customer/account/" id="my-account">Conta</a>
+                            </li>
+                            <li class="link wishlist" data-bind="scope: 'wishlist'">
+                                <a href="<?= $block->getUrl() ?>wishlist/" id="my-wishlist">Lista de desejos</a>
+                            </li>
+                            <li>
+                                <a href="<?= $block->getUrl() ?>/sales/order/history/" id="my-orders">Pedidos</a>
+                            </li>
+                            <li>
+                                <a href="<?= $block->getUrl() ?>customer/address/" id="my-addresses">Endereços</a>
+                            </li>
+                            <li class="link logout" data-label="or">
+                                <a href="<?= $block->getUrl() ?>customer/account/logout/">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        <?php else: ?>
+            <!-- Markup portion for Logged out customer -->
+            <li class="link authorization-link" data-label="or">
+                <a href="<?= $block->getUrl() ?>customer/account/login/">Entre</a>
+                ou
+                <a href="<?= $block->getUrl() ?>customer/account/create/" id="create-account">Cadastre-se</a>
+            </li>
+        <?php endif; ?>
+    </ul>
+</div>
