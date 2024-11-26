@@ -36,7 +36,7 @@ $customerSession = $objectManager->get('Magento\Customer\Model\Session');
             <!-- Markup portion for Logged out customer -->
             <li class="link authorization-link" data-label="or">
                 <a href="<?= $block->getUrl() ?>customer/account/login/">Entre</a>
-                ou
+                <span>ou</span>
                 <a href="<?= $block->getUrl() ?>customer/account/create/" id="create-account">Cadastre-se</a>
             </li>
         <?php endif; ?>

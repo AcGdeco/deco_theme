@@ -1,0 +1,60 @@
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .sections.nav-sections {
+        .section-item-title {
+            a {
+                color: black;
+                font-weight: bolder;
+            }
+        }
+        
+        .my-account-text {
+            display: none;
+        }
+        
+        .header.links {
+            a {
+                background-color: white;
+            }
+
+            .link.logout {
+                a {
+                    color: red;
+                }
+            }
+
+            .link.authorization-link {
+                span {
+                    display: none;
+                }
+
+                a {
+                    font-size: 1.4rem;
+                    margin: 5px 10px;
+                    height: 28px;
+                    padding: 0px 0px 0px 5px;
+                    display: flex;
+                    align-items: center;
+                    border-top: none;
+                    font-weight: 400;
+                }
+            }
+
+            li {
+                a {
+                    font-size: 1.4rem;
+                    margin: 5px 10px;
+                    height: 28px;
+                    padding: 0px 0px 0px 5px;
+                    display: flex;
+                    align-items: center;
+                    border-top: none;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
