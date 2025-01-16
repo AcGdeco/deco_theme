@@ -4,13 +4,6 @@
  * See COPYING.txt for license details.
  */
 
-/** @var \Magento\Newsletter\Block\Subscribe $block */
-if (!$block->getButtonLockManager()) {
-    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-    $block->setButtonLockManager(
-        $objectManager->get(\Magento\Framework\View\Element\ButtonLockManager::class)
-    );
-}
 /** @var $escaper \Magento\Framework\Escaper */
 ?>
 <div class="block newsletter">
@@ -49,9 +42,7 @@ if (!$block->getButtonLockManager()) {
                         title="<?= $escaper->escapeHtmlAttr(__('Subscribe')) ?>"
                         type="submit"
                         aria-label="Subscribe"
-                    <?php if ($block->getButtonLockManager()->isDisabled('newsletter_form_submit')): ?>
-                        disabled="disabled"
-                    <?php endif; ?>>
+                >
                     <span><?= $escaper->escapeHtml(__('Subscribe')) ?></span>
                 </button>
             </div>
