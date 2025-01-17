@@ -2,10 +2,11 @@
 $ObjectManager= \Magento\Framework\App\ObjectManager::getInstance();
 $context = $ObjectManager->get('Magento\Framework\App\Http\Context');
 $isLoggedIn = $context->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
+$customerSession = $ObjectManager->get('Magento\Customer\Model\Session');
 ?>
 
 <ul class="header links">
-    <?php if($isLoggedIn): ?>
+    <?php if($isLoggedIn || $customerSession->isLoggedIn()): ?>
         <li class="title-footer-links" >
             Minha Conta
         </li>

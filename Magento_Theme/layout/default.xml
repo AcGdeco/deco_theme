@@ -51,5 +51,12 @@
             </container>
         </referenceContainer>
         <referenceBlock name="footer_links" remove="true"/>
+        <referenceContainer name="page.wrapper">
+            <container name="footer.bottom" htmlTag="div" htmlClass="footer-bottom" after="footer">
+                <container name="footer.bottom.forms" htmlTag="div" htmlClass="footer-bottom-forms" after="footer">
+                    <block name="footer.forms" template="Magento_Theme::footer_bottom.phtml" />
+                </container>
+            </container>
+        </referenceContainer>
     </body>
 </page>
