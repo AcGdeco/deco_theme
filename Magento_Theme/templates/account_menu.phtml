@@ -1,12 +1,13 @@
 <?php
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$customerSession = $objectManager->get('Magento\Customer\Model\Session');
+$ObjectManager= \Magento\Framework\App\ObjectManager::getInstance();
+$context = $ObjectManager->get('Magento\Framework\App\Http\Context');
+$isLoggedIn = $context->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
 ?>
 
 <div class="panel header">
     <!-- This markup portion is the source for Mobile View Navigation Menu -->
     <ul class="header links">
-        <?php if($customerSession->isLoggedIn()): ?>
+        <?php if($isLoggedIn): ?>
             <li class="customer-welcome active">
                 <!-- Markup portion for Logged in customer -->
                 <div class="my-account-menu" >
