@@ -166,10 +166,27 @@
         }
 
         .product-info-main {
+            .table-wrapper-frenet {
+                th {
+                    border-bottom: none;
+                    background-color: black;
+                    color: #fff;
+                }
+
+                tr:nth-child(odd) {
+                    background-color: #f2f2f2;
+                }
+                  
+                tr:nth-child(even) {
+                    background-color: #ffffff;
+                }
+            }
+
             .label-input-btn {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
+                margin-bottom: 20px;
 
                 .field {
                     display: flex;
