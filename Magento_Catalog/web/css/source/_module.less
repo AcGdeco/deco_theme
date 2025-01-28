@@ -612,6 +612,12 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .catalog-product-view {
+        .fotorama__nav {
+            .fotorama__nav__shaft {
+                display: table;
+                margin: auto;
+            }
+        }
         .fotorama__thumb__arr {
             display: flex;
             justify-content: center;
