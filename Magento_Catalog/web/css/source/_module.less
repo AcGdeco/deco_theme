@@ -778,6 +778,33 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .catalog-product-view {
+        .product-info-main {
+            .table-wrapper {
+                table {
+                    display: table;
+                }
+
+                tbody {
+                    display: table-row-group;
+                }
+
+                th {
+                    display: table-cell;
+                }
+
+                td {
+                    display: table-cell;
+                    padding: 8px 10px;
+                    border-bottom: none;
+                    display: table-cell;
+                }
+
+                tr {
+                    display: table-row;
+                }
+            }
+        }
+
         .fotorama__nav {
             .fotorama__nav__shaft {
                 display: table;
