@@ -15,6 +15,77 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    #reviews {
+        .review-content {
+            text-align: justify;
+        }
+    }
+
+    .catalog-product-view {
+        #reviews {
+            .review-form-actions {
+                margin-left: initial;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    margin: 0;
+                    background: #1979c3;
+                    border: 1px solid #1979c3;
+                    color: #fff;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    box-sizing: border-box;
+                    vertical-align: middle;
+
+                    &:hover {
+                        background: #006bb4;
+                        border: 1px solid #006bb4;
+                    }
+                }
+            }
+
+            .review-ratings {
+                float: initial;
+                margin-bottom: 20px;
+            }
+
+            .field {
+                .label {
+                    padding: initial;
+                    text-align: initial;
+                    width: initial;
+                    float: initial;
+                }
+
+                .control {
+                    width: 100%;
+                    float: initial;
+                }
+            }
+
+            .review-field-rating {
+                display: table-row;
+
+                .label {
+                    display: flex;
+                    align-items: center;
+                    padding-right: 25px;
+                    height: 28px;
+                }
+
+                .review-control-vote {
+                    margin: 0px;
+                    padding: 0px;
+                    height: 28px;
+                }
+            }
+        }
+    }
+
     .data.switch .counter {
         .lib-css(color, @text__color__muted);
 
