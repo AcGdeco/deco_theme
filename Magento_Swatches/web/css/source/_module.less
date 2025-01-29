@@ -65,6 +65,20 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    .catalog-product-view {
+        .product-options-wrapper {
+            .swatch-attribute-label {
+                &::after {
+                    content: ':';
+                }
+            }
+
+            .swatch-attribute-selected-option {
+                padding-left: 5px;
+            }
+        }
+    }
+
     .swatch {
         &-attribute {
             &-label {
