@@ -218,8 +218,12 @@
                 }
             }
 
-            .product.attribute.overview {
+            > .product.attribute.overview {
                 margin: 25px 0 0 0;
+
+                .box-frenet-quote {
+                    display: none;
+                }
 
                 &::after {
                     content: '';
@@ -418,19 +422,37 @@
             }
         }
 
+        .product-info-price {
+            display: flex;
+            flex-direction: column;
+            
+            .product-reviews-summary {
+                order: 0;
+                margin: 0px 0 5px 5px;
+            }
+
+            .product-info-stock-sku {
+                order: 1;
+
+                &::after {
+                    content: '';
+                    height: 1px;
+                    width: 100%;
+                    background-color: lightgray;
+                    display: block;
+                    margin: 20px 0 20px 0px;
+                }
+            }
+
+            .price-box {
+                order: 2;
+            }
+        }
+
         .product-reviews-summary {
-            margin: 5px 0 30px 5px;
             width: 99%;
             display: flex;
             flex-direction: column;
-
-            &::after {
-                content: '';
-                height: 1px;
-                width: 100%;
-                background-color: lightgray;
-                display: block;
-            }
         }
 
         .page-title-wrapper {
