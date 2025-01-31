@@ -291,6 +291,11 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    body.filter-active {
+        visibility: hidden;
+        overflow: hidden;
+    }
+
     .sidebar-main {
         .block.filter {
             .block-title.filter-title {
@@ -322,10 +327,43 @@
         }
 
         .block.filter.active {
+            border: solid 1px lightgray;
+            width: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: white;
+            max-height: 100%;
+            overflow: overlay;
+            visibility: visible;
+
+            .block-title.filter-title {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 0px;
+                background: #1979c3;
+
+                strong {
+                    background: none;
+                    border: none;
+                    text-transform: uppercase;
+                    width: 100%;
+                    justify-content: center;
+                    
+                    &::after {
+                        content: 'X';
+                        color: white;
+                        font-size: 14px;
+                        font-weight: bolder;
+                        position: absolute;
+                        right: 15px;
+                    }
+                }
+            }
+
             .block-content.filter-content {
-                display: block;  
-                border: solid 1px lightgray;
-                width: 100%;
+                display: block;
 
                 .block-subtitle {
                     border-top: solid 1px black;
