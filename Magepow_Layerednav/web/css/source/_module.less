@@ -3,6 +3,106 @@
 
     .block.filter {
         #layered_ajax_price_attribute {
+            #layered_ajax_price_input {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 5px;
+                position: relative;
+
+                .layered_ajax_price_input_msg {
+                    position: absolute;
+                    bottom: 32px;
+                    z-index: 1;
+                }
+
+                .layered_ajax_price_btn {
+                    display: none;
+                    background: #1979c3;
+                    border: 1px solid #1979c3;
+                    color: #fff;
+                    cursor: pointer;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    padding: 3px 6px;
+                    font-size: 1.4rem;
+                    box-sizing: border-box;
+                    vertical-align: middle;
+                    width: 9%;
+
+                    &:hover {
+                        background: #006bb4;
+                        border: 1px solid #006bb4;
+                        color: #fff;
+                    }
+                }
+                
+                .message-error {
+                    background: #fffbbb;
+                    color: #333;
+                    padding: 5px 5px;
+                    position: relative;
+                    border: solid 1px #333;
+                    margin-bottom: 1px;
+                    width: 100%;
+                    display: none;
+                    
+                    &:before {
+                        color: red;
+                        content: '\E82B';
+                        font-size: 15px;
+                        font-family: fontello;
+                        margin-right: 5px;
+                    }
+                }   
+
+                .wrapper-input {
+                    width: 49.5%;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    &::before {
+                        content: 'R$';
+                        font-size: 15px;
+                        color: black;
+                        margin-left: 4px;
+                        position: absolute;
+                    }
+
+                    &::after {
+                        font-size: 10px;
+                        color: black;
+                        left: 10px;
+                        position: absolute;
+                        background-color: white;
+                        top: -6px;
+                        line-height: 1;
+                        z-index: 0;
+                    }
+
+                    input {
+                        padding-left: 22px;
+                    }
+
+                }
+
+                .layered_ajax_price_input_max {
+                    &::after {
+                        content: 'Máximo';
+                    }
+                }
+
+                .layered_ajax_price_input_min {
+                    &::after {
+                        content: 'Mínimo';
+                    }
+                }
+
+            }
+
             #layered_ajax_price_text {
                 display: flex;
                 justify-content: center;
@@ -298,6 +398,18 @@
 
     .sidebar-main {
         .block.filter {
+            #layered_ajax_price_attribute {
+                #layered_ajax_price_input {
+                    .wrapper-input {
+                        width: 45%;
+                    }
+
+                    .layered_ajax_price_btn {
+                        display: flex;
+                    }
+                }
+            }
+
             .block-title.filter-title {
                 display: initial;
 
@@ -371,6 +483,7 @@
 
                 .filter-options-title {
                     border-top: solid 1px lightgray;
+                    background: #e6e6e6;
                 }
             }
         }
