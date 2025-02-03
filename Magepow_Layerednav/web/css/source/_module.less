@@ -425,19 +425,22 @@
             }
 
             .block-title.filter-title {
-                display: initial;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
 
                 strong {
                     background: #1979c3;
                     border: 1px solid #1979c3;
                     color: white;
-                    padding: 10px 15px;
+                    padding: 7px 15px;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
                     align-items: center;
                     cursor: pointer;
-                    width: fit-content;
                     font-size: 1.4rem;
+                    border-radius: 3px;
+                    width: fit-content;
 
                     &:hover {
                         background: #006bb4;
@@ -464,9 +467,6 @@
             visibility: visible;
 
             .block-title.filter-title {
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 margin-bottom: 0px;
                 background: #1979c3;
 
