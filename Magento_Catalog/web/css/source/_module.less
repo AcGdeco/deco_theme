@@ -764,21 +764,6 @@
         }
 
         .block-compare {
-            .block-title {
-                display: flex;
-                flex-direction: column;
-
-                #block-compare-heading {
-                    font-weight: bolder;
-                    background-color: #b0b0b0;
-                    padding: 10px 15px;
-                    color: white;
-                    font-size: 15px;
-                    display: flex;
-                    justify-content: center;
-                }
-            }
-
             .actions-toolbar {
                 .primary {
                     a {
@@ -802,39 +787,39 @@
                         }
                     }
                 }
+            }
 
-                .secondary {
-                    a {
-                        text-decoration: none;
-                        position: relative;
-                        color: #1979c3;
-                        font-weight: bold;
+            .action {
+                &.delete {
+                    right: initial;
+                }
+            }
+        }
 
-                        &:hover::after {
-                            transform: scaleX(1);
-                        }
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            display: block;
-                            left: 0;
-                            bottom: 0;
-                            background-color: #1979c3;
-                            height: 1px;
-                            width: 100%;
-                            transform: scaleX(0);
-                            transition: all 300ms eases all ease-in;
-                            -webkit-transition: all 300ms ease 0.5s ease;
-                            -moz-transition: all 300ms ease 0.5s ease;
-                            -o-transition: all 300ms ease 0.5s ease;
-                            -ms-transition: all 300ms ease 0.5s ease;
-                            transition: all 300ms ease 0.5s ease;
-                            -webkit-transition: all 300ms ease;
-                            -o-transition: all 300ms ease;
-                            transition: all 300ms ease;
-                        }
+        .block-reorder {
+            .actions-toolbar {
+                .primary {
+                    button {
+                        width: fit-content;
                     }
+                }
+            }
+        }
+        
+        .block-compare, .block-wishlist, .block-reorder {
+            .block-title {
+                display: flex;
+                flex-direction: column;
+
+                strong {
+                    font-weight: bolder;
+                    background-color: #b0b0b0;
+                    padding: 10px 15px;
+                    color: white;
+                    font-size: 15px;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
                 }
             }
 
@@ -870,99 +855,37 @@
                     }
                 }
             }
-
-            .action {
-                &.delete {
-                    right: initial;
-                }
-            }
-        }
-
-        .block-wishlist {
-            .block-title {
-                display: flex;
-                flex-direction: column;
-
-                strong {
-                    font-weight: bolder;
-                    background-color: #b0b0b0;
-                    padding: 10px 15px;
-                    color: white;
-                    font-size: 15px;
-                    display: flex;
-                    justify-content: center;
-                }
-            }
-
+            
             .actions-toolbar {
-                .primary {
-                    a {
-                        text-decoration: none;
-                        position: relative;
-                        color: #1979c3;
-                        font-weight: bold;
+                a {
+                    text-decoration: none;
+                    position: relative;
+                    color: #1979c3;
+                    font-weight: bold;
 
-                        &:hover::after {
-                            transform: scaleX(1);
-                        }
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            display: block;
-                            left: 0;
-                            bottom: 0;
-                            background-color: #1979c3;
-                            height: 1px;
-                            width: 100%;
-                            transform: scaleX(0);
-                            transition: all 300ms eases all ease-in;
-                            -webkit-transition: all 300ms ease 0.5s ease;
-                            -moz-transition: all 300ms ease 0.5s ease;
-                            -o-transition: all 300ms ease 0.5s ease;
-                            -ms-transition: all 300ms ease 0.5s ease;
-                            transition: all 300ms ease 0.5s ease;
-                            -webkit-transition: all 300ms ease;
-                            -o-transition: all 300ms ease;
-                            transition: all 300ms ease;
-                        }
+                    &:hover::after {
+                        transform: scaleX(1);
                     }
-                }
-            }
 
-            .product-items {
-                .product-item {
-                    .product-item-name {
-                        a {
-                            text-decoration: none;
-                            position: relative;
-                            color: #333;
-
-                            &:hover::after {
-                                transform: scaleX(1);
-                            }
-
-                            &::after {
-                                content: "";
-                                position: absolute;
-                                display: block;
-                                left: 0;
-                                bottom: 0;
-                                background-color: #333;
-                                height: 1px;
-                                width: 100%;
-                                transform: scaleX(0);
-                                transition: all 300ms eases all ease-in;
-                                -webkit-transition: all 300ms ease 0.5s ease;
-                                -moz-transition: all 300ms ease 0.5s ease;
-                                -o-transition: all 300ms ease 0.5s ease;
-                                -ms-transition: all 300ms ease 0.5s ease;
-                                transition: all 300ms ease 0.5s ease;
-                                -webkit-transition: all 300ms ease;
-                                -o-transition: all 300ms ease;
-                                transition: all 300ms ease;
-                            }
-                        }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        left: 0;
+                        bottom: 0;
+                        background-color: #1979c3;
+                        height: 1px;
+                        width: 100%;
+                        transform: scaleX(0);
+                        transition: all 300ms eases all ease-in;
+                        -webkit-transition: all 300ms ease 0.5s ease;
+                        -moz-transition: all 300ms ease 0.5s ease;
+                        -o-transition: all 300ms ease 0.5s ease;
+                        -ms-transition: all 300ms ease 0.5s ease;
+                        transition: all 300ms ease 0.5s ease;
+                        -webkit-transition: all 300ms ease;
+                        -o-transition: all 300ms ease;
+                        transition: all 300ms ease;
                     }
                 }
             }
@@ -1126,6 +1049,18 @@
 
         .product.media {
             .lib-vendor-prefix-order(-1);
+        }
+    }
+
+    .sidebar {
+        .block-compare, .block-wishlist, .block-reorder {
+            .actions-toolbar {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                flex-direction: column;
+                max-width: 100%;
+            }
         }
     }
 
