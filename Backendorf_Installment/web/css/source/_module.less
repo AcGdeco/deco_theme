@@ -1,25 +1,101 @@
-.installments {
-    .installment {
-        font-size: 14px;
-        line-height: 16px;
-        font-weight: 400;
-        margin: 10px 0;
+.product-items {
+    .product-item {
+        .price-box {
+            .price {
+                font-size: 19px;
+                font-weight: 700 !important;
+                color: var(--bi-highlight-text-color);
+            }
+        }
+    }
+}
 
-        strong {
-            color: var(--bi-highlight-text-color);
-            font-weight: var(--bi-highlight-text-font-weight);
+.product-item-details {
+    display: flex;
+    flex-direction: column;
+
+    .discounts {
+        order: 1;
+    }
+
+    .installment {
+        order: 2;
+    }
+
+    .price-box.price-final_price {
+        order: 2;
+
+        .installment {
+            order: 2;
+        }
+
+        .price-final_price {
+            order: 1;
+        }
+
+        .discounts {
+            order: 0;
+            
+            .item {
+                margin-bottom: 0px;
+            }
         }
     }
 
-    .discounts ul {
-        list-style: none;
-        padding: 0;
+    .discounts {
+        .percentage {
+            background-color: var(--bi-highlight-text-color);
+            color: white;
+            border-radius: 10px;
+            padding: 0px 4px;
+            font-size: 1.4rem;
+        }
+    }
 
-        li.item {
-            strong {
-                color: var(--bi-highlight-text-color);
-                font-weight: var(--bi-highlight-text-font-weight);
+    .price-box.price-final_price {
+        display: flex;
+        flex-direction: column;
+
+        .old-price {
+            order: 0;
+            text-decoration: none;
+            margin-top: 4px;
+
+            .price {
+                text-decoration: line-through;
+                font-size: 14px;
+                color: lightgray;
             }
+        }
+
+        .special-price {
+            order: 1;
+        }
+    }
+}
+
+.installment {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    margin: 5px 0;
+
+    strong {
+        color: var(--bi-highlight-text-color);
+        font-weight: var(--bi-highlight-text-font-weight);
+        font-size: 15px;
+    }
+}
+
+.discounts ul {
+    list-style: none;
+    padding: 0;
+
+    li.item {
+        strong {
+            color: var(--bi-highlight-text-color);
+            font-weight: var(--bi-highlight-text-font-weight);
+            font-size: 15px;
         }
     }
 }
