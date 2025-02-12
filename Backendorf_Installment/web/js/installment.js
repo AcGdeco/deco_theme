@@ -28,7 +28,7 @@ define([
         },
         _create: function () {
             let widget = this;
-
+                
             if (this.options.enabled) {
                 try {
                     $('body').on('afterReloadPrice', function (e, data) {
@@ -74,14 +74,24 @@ define([
                 let installments = this.getInstallments(total);
                 if (installments) {
                     let bestInstallment = this.getBestInstallment(installments);
-                    let discounts = this.renderDiscounts(this.getDiscounts(total));
-                    console.log(discounts); 
                     const template = this.options.templates.in_cart_template;
+                    var html;
+                    var discount = parseFloat(this.getTotalDiscount(total));
+                    
+                    if(discount == 0) {
+                        html = template.replace('{{qty}}', bestInstallment.installments_qty)
+                            .replace('{{value}}', bestInstallment.installment_value)
+                            .replace('{{interest}}', (this.renderInterest(bestInstallment)))
+                            .replace('{{discounts}}', '');
+                    } else {
+                        discount = this.renderDiscounts(this.getDiscounts(total - discount));
 
-                    let html = template.replace('{{qty}}', bestInstallment.installments_qty)
-                        .replace('{{value}}', bestInstallment.installment_value)
-                        .replace('{{interest}}', (this.renderInterest(bestInstallment)))
-                        .replace('{{discounts}}', '<div class="discounts">' + discounts + '</div>');
+                        html = template.replace('{{qty}}', bestInstallment.installments_qty)
+                            .replace('{{value}}', bestInstallment.installment_value)
+                            .replace('{{interest}}', (this.renderInterest(bestInstallment)))
+                            .replace('{{discounts}}', '<div class="discounts">' + discount + '</div>');
+                    }
+                   
                     $('#cart-totals').append('<div class="installments">' + html + '</div>');
                 }
             }
@@ -361,6 +371,19 @@ define([
             return grandTotal;
         },
         /**
+         *
+         * @returns {number}
+         */
+        getTotalDiscount: function () {
+            let discount = 0;
+            let cartData = customerData.get('cart-data')();
+
+            if (cartData.totals && cartData.totals.base_discount_amount) {
+                discount = parseFloat(cartData.totals.base_discount_amount);
+            }
+            return discount;
+        },
+        /**
          * @param price
          * @returns {*}
          */
@@ -388,3 +411,4 @@ define([
     });
     return $.mage.installment;
 });
+
