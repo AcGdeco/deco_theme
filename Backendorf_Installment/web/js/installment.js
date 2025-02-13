@@ -1,9 +1,8 @@
 define([
     "jquery",
     'Magento_Catalog/js/price-utils',
-    'mage/translate',
-    'Magento_Customer/js/customer-data'
-], function ($, priceUtils, $t, customerData) {
+    'mage/translate'
+], function ($, priceUtils, $t) {
     'use strict';
     $.widget('mage.installment', {
         'options': {
@@ -71,18 +70,27 @@ define([
             $('#cart-totals .installments').remove();
             total = (total) ? total : this.getTotal();
             if (total) {
-                let installments = this.getInstallments(total);
+                let installments;
+                var discount = parseFloat(this.getTotalDiscount(total));
+
+                if(discount != 0) {
+                    installments = this.getInstallments(total - discount);
+                } else {
+                    installments = this.getInstallments(total);
+                }
+                
                 if (installments) {
                     let bestInstallment = this.getBestInstallment(installments);
                     const template = this.options.templates.in_cart_template;
                     var html;
-                    var discount = parseFloat(this.getTotalDiscount(total));
                     
                     if(discount == 0) {
+                        discount = this.renderDiscounts(this.getDiscounts(total));
+
                         html = template.replace('{{qty}}', bestInstallment.installments_qty)
                             .replace('{{value}}', bestInstallment.installment_value)
                             .replace('{{interest}}', (this.renderInterest(bestInstallment)))
-                            .replace('{{discounts}}', '');
+                            .replace('{{discounts}}', '<div class="discounts">' + discount + '</div>');
                     } else {
                         discount = this.renderDiscounts(this.getDiscounts(total - discount));
 
@@ -363,11 +371,11 @@ define([
          */
         getTotal: function () {
             let grandTotal = 0;
-            let cartData = customerData.get('cart-data')();
 
-            if (cartData.totals && cartData.totals.base_grand_total) {
-                grandTotal = parseFloat(cartData.totals.base_grand_total);
+            if (checkoutConfig.totalsData && checkoutConfig.totalsData.base_grand_total) {
+                grandTotal = parseFloat(checkoutConfig.totalsData.base_grand_total);
             }
+
             return grandTotal;
         },
         /**
@@ -376,11 +384,11 @@ define([
          */
         getTotalDiscount: function () {
             let discount = 0;
-            let cartData = customerData.get('cart-data')();
 
-            if (cartData.totals && cartData.totals.base_discount_amount) {
-                discount = parseFloat(cartData.totals.base_discount_amount);
+            if (checkoutConfig.totalsData && checkoutConfig.totalsData.base_discount_amount) {
+                discount = parseFloat(checkoutConfig.totalsData.base_discount_amount);
             }
+
             return discount;
         },
         /**
