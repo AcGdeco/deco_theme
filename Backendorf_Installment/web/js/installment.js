@@ -1,7 +1,8 @@
 define([
     "jquery",
     'Magento_Catalog/js/price-utils',
-    'mage/translate'
+    'mage/translate',
+    'jquery/ui'
 ], function ($, priceUtils, $t) {
     'use strict';
     $.widget('mage.installment', {
@@ -27,7 +28,13 @@ define([
         },
         _create: function () {
             let widget = this;
-                
+
+            if(window.globalOptions){
+                this.options = window.globalOptions;
+            } else {
+                window.globalOptions = this.options;
+            }
+            
             if (this.options.enabled) {
                 try {
                     $('body').on('afterReloadPrice', function (e, data) {
@@ -50,8 +57,8 @@ define([
                             widget.updateAllInstallments(element);
                         }
                     });
-
-                    if (this.options.best_installment_in_cart && $('#cart-totals').length > 0) {
+                    
+                    if (this.options.best_installment_in_cart && ($('#cart-totals').length > 0 || $('#opc-installments-discount').length > 0)) {
                         widget.initPricesInCart();
                         require([
                             'Magento_Checkout/js/model/quote'
@@ -67,7 +74,12 @@ define([
             }
         },
         initPricesInCart: function (total = null) {
-            $('#cart-totals .installments').remove();
+            if ($('#cart-totals .installments').length > 0) {
+                $('#cart-totals .installments').remove();
+            }else if($('#opc-installments-discount .installments').length > 0) {
+                $('#opc-installments-discount .installments').remove();
+            }
+            
             total = (total) ? total : this.getTotal();
             if (total) {
                 let installments;
@@ -100,7 +112,11 @@ define([
                             .replace('{{discounts}}', '<div class="discounts">' + discount + '</div>');
                     }
                    
-                    $('#cart-totals').append('<div class="installments">' + html + '</div>');
+                    if ($('#cart-totals').length > 0) {
+                        $('#cart-totals').append('<div class="installments">' + html + '</div>');
+                    }else if($('#opc-installments-discount').length > 0) {
+                        $('#opc-installments-discount').append('<div class="installments">' + html + '</div>');
+                    }
                 }
             }
 
@@ -420,3 +436,4 @@ define([
     return $.mage.installment;
 });
 
+ 
