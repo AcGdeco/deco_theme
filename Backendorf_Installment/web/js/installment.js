@@ -80,10 +80,23 @@ define([
                 $('#opc-installments-discount .installments').remove();
             }
             
-            total = (total) ? total : this.getTotal();
+            var dataConfig = window.dataConfig ? window.dataConfig : false;
+
+            if(dataConfig) {
+                total = dataConfig.base_grand_total;
+            } else {
+                total = (total) ? total : this.getTotal();
+            }
+
             if (total) {
                 let installments;
-                var discount = parseFloat(this.getTotalDiscount(total));
+                var discount;
+
+                if(dataConfig) {
+                    discount = dataConfig.base_discount_amount;
+                } else {
+                    discount = parseFloat(this.getTotalDiscount());
+                }
 
                 if(discount != 0) {
                     installments = this.getInstallments(total - discount);

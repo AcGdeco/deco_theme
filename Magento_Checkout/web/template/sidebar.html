@@ -23,17 +23,17 @@
         <!-- ko template: getTemplate() --><!-- /ko -->
     <!--/ko-->
 
-    <div class="opc-block-shipping-information">
-        <!-- ko foreach: getRegion('shipping-information') -->
-        <!-- ko template: getTemplate() --><!-- /ko -->
-        <!--/ko-->
-    </div>
-    
     <div id="opc-installments-discount" >
         <div class="opc-installments-discount"
             data-bind="mageInit: {
             'installment':{}}" >
             
         </div>
+    </div>
+
+    <div class="opc-block-shipping-information">
+        <!-- ko foreach: getRegion('shipping-information') -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
     </div>
 </div>
