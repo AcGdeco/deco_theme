@@ -91,6 +91,8 @@ define([
             if (total) {
                 let installments;
                 var discount;
+                var totalCheckout;
+                var htmlTotal;
 
                 if(dataConfig) {
                     discount = dataConfig.base_discount_amount;
@@ -100,9 +102,13 @@ define([
 
                 if(discount != 0) {
                     installments = this.getInstallments(total - discount);
+                    totalCheckout = total - discount;
                 } else {
                     installments = this.getInstallments(total);
+                    totalCheckout = total;
                 }
+
+                totalCheckout = this.formatPrice(totalCheckout);
                 
                 if (installments) {
                     let bestInstallment = this.getBestInstallment(installments);
@@ -128,7 +134,8 @@ define([
                     if ($('#cart-totals').length > 0) {
                         $('#cart-totals').append('<div class="installments">' + html + '</div>');
                     }else if($('#opc-installments-discount').length > 0) {
-                        $('#opc-installments-discount').append('<div class="installments">' + html + '</div>');
+                        htmlTotal = '<div class="grand-total">' + totalCheckout + '</div>';
+                        $('#opc-installments-discount').append('<div class="installments"><div class="installments-discount-tittle" >Valores</div>' + htmlTotal + html + '</div>');
                     }
                 }
             }
