@@ -37,7 +37,17 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .deco-menu-mobile {
+        li {
+            height: 34px;
+        }
+    }
+
     .sections.nav-sections {
+        .navigation {
+            display: none;
+        }
+
         .section-item-title {
             a {
                 color: black;
@@ -68,7 +78,7 @@
                 a {
                     font-size: 1.4rem;
                     margin: 5px 10px;
-                    height: 28px;
+                    height: 34px;
                     padding: 0px 0px 0px 5px;
                     display: flex;
                     align-items: center;
