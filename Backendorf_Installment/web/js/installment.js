@@ -288,7 +288,7 @@ define([
             for (let i in discounts) {
                 html += '<li class="item">' + this.options.templates.discount_template
                     .replace('{{valueWithDiscount}}', discounts[i].value)
-                    .replace('{{percentage}}', discounts[i].percentage + '%')
+                    .replace('{{percentage}}','-' + Math.floor(discounts[i].percentage) + '%')
                     .replace('{{name}}', '<span class="name">' + discounts[i].name + '</span>') + '</li>';
             }
             html += '</ul>';
@@ -430,7 +430,7 @@ define([
                 groupLength: 3,
                 groupSymbol: ".",
                 integerRequired: false,
-                pattern: this.options.currency_symbol + "%s",
+                pattern: this.options.currency_symbol + " %s",
                 precision: 2,
                 requiredPrecision: 2
             };

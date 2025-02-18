@@ -1,12 +1,112 @@
-.product-items {
-    .product-item {
-        .price-box {
-            .price {
+.installments {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 6px;
+    position: relative;
+    margin-bottom: 10px;
+
+    .price-box.price-final_price {
+        margin: 0px;
+    }
+
+    .old-price {
+        order: 0;
+        width: 100%;
+        position: absolute;
+        top: -11px;
+        text-decoration: none;
+        left: 1px;
+
+        .price {
+            font-size: 12px !important;
+            text-decoration: line-through;
+        }
+    }
+
+    .discounts {
+        order: 1;
+        width: 100%;
+
+        li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            flex-wrap: wrap;
+
+            strong {
                 font-size: 19px;
-                font-weight: 700 !important;
-                color: var(--bi-highlight-text-color);
+                margin-right: 4px;
+            }
+
+            .percentage {
+                margin-right: 2px;
+            }
+    
+            .name {
+                margin-left: 2px;
             }
         }
+    }
+
+    .price-box.price-final_price {
+        order: 2;
+        width: 100%;
+
+        .price-container {
+            .price-label {
+                display: none;
+            }
+        }
+
+        .price {
+            font-size: 15px !important;
+            display: flex;
+            flex-wrap: wrap;
+
+            &::before {
+                content: 'ou';
+                margin-right: 2px;
+            }
+
+            &::after {
+                content: 'em até';
+                margin-left: 2px;
+            }
+        }
+    }
+
+    .installment {
+        order: 3;
+        width: 100%;
+    }
+
+    .discounts .item, 
+    .price-box.price-final_price .price::after,  
+    .price-box.price-final_price .price::before,
+    .installment, .installment span
+    {
+        color: black;
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+}
+
+.installments {
+    .price-box {
+        .price {
+            font-weight: 700 !important;
+            color: var(--bi-highlight-text-color);
+        }
+    }
+}
+
+.discounts {
+    .percentage {
+        background-color: var(--bi-highlight-text-color);
+        color: white;
+        border-radius: 100%;
+        font-size: 1.4rem;
+        padding: 0px 2px;
     }
 }
 
@@ -42,16 +142,6 @@
         }
     }
 
-    .discounts {
-        .percentage {
-            background-color: var(--bi-highlight-text-color);
-            color: white;
-            border-radius: 10px;
-            padding: 0px 4px;
-            font-size: 1.4rem;
-        }
-    }
-
     .price-box.price-final_price {
         display: flex;
         flex-direction: column;
@@ -78,7 +168,6 @@
     font-size: 14px;
     line-height: 16px;
     font-weight: 400;
-    margin: 5px 0;
 
     strong {
         color: var(--bi-highlight-text-color);
@@ -95,7 +184,6 @@
         strong {
             color: var(--bi-highlight-text-color);
             font-weight: var(--bi-highlight-text-font-weight);
-            font-size: 15px;
         }
     }
 }
@@ -147,6 +235,124 @@
             color: @color-gray-light3;
             font-size: 10px;
             line-height: 12px;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .products-list {
+        .product-item {
+            .product-item-photo {
+                width: 100% !important;
+                padding: 0px !important;
+            }
+    
+            .rating-summary {
+                display: flex;
+                justify-content: center;
+            }
+
+            .product-item-inner {
+                .actions-secondary {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    .product-item {
+        .product-item-name {
+            display: flex;
+            justify-content: center;
+
+            a {
+                text-align: center;
+                font-size: 15px;
+                -webkit-line-clamp: 2 !important;
+            }
+        }
+
+        .old-price {
+            display: flex;
+            justify-content: center;
+        }
+
+        .discounts {
+            .item {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 10px;
+
+                strong {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .price-box {
+            .special-price {
+                display: flex;
+                justify-content: center;
+            }
+        }
+        
+        .installment {
+            display: flex;
+            justify-content: center;
+        }
+
+        .price-box {
+            .price {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                line-height: 1;
+                font-size: 14px !important;
+
+                &:after {
+                    font-size: 14px !important;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                &:before {
+                    font-size: 14px !important;
+                }
+            }
+        }
+
+        .installment {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0px 2px;
+            justify-content: center;
+            font-size: 14px;
+
+            strong {
+                font-size: 14px;
+            }
+
+            span {
+                width: 100%;
+                text-align: center;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .products.list.items.product-items {
+        .installment {
+            span {
+                justify-content: flex-start !important;
+
+                .price {
+                    justify-content: flex-start !important;
+                }
+            }
         }
     }
 }
