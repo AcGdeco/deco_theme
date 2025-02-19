@@ -37,6 +37,12 @@ define([
             
             if (this.options.enabled) {
                 try {
+                    $(document).ajaxComplete(function() {
+                        $('.price-box.price-final_price').each(function (i, element) {
+                            widget.renderPrices(element);
+                        });
+                    });
+
                     $('body').on('afterReloadPrice', function (e, data) {
                         if (!$(data.element).hasClass('price-tier_price')) {
                             widget.renderPrices(data.element, {amount: data.price.final});
