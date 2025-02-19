@@ -366,8 +366,12 @@ define([
                     .replace('{{interest}}', (this.renderInterest(data.installment)) + '</div>')
                     .replace('{{discounts}}', '<div class="discounts">' + data.discounts + '</div>');
                 if (installmentDiv) {
-                    //$(priceElement).insertBefore($(installmentDiv));
-                    //$(installmentDiv).html(template);
+                    var oldPrice = $(installmentDiv).find(".old-price");
+                    $(priceElement).insertBefore($(installmentDiv));
+                    $(installmentDiv).html(template);
+                    if(oldPrice.length > 0) {
+                        $(installmentDiv).append(oldPrice);
+                    }
                 } else {
                     installmentDiv = $('<div class="installments">' + template + '</div>');
                     installmentDiv.insertBefore(priceElement);
