@@ -1,0 +1,44 @@
+.checkout-index-index {
+    .checkout-shipping-address {
+        .fieldset {
+            .field {
+                display: flex;
+                flex-direction: column;
+
+                &::before {
+                    display: none;
+                }
+
+                &::after {
+                    display: none;
+                }
+
+                .label {
+                    padding: 0 !important;
+                    text-align: initial !important;
+                    width: initial !important;
+                    box-sizing: initial !important;
+                    float: initial !important;
+                }
+            }
+
+            .field.street.admin__control-fields {
+                [name="shippingAddress.street.0"], 
+                [name="shippingAddress.street.1"],
+                [name="shippingAddress.street.2"]
+                {
+                    margin-bottom: 29px;
+
+                    .label {
+                        &::after {
+                            content: '*';
+                            color: #e02b27;
+                            font-size: 1.2rem;
+                            margin: 0 0 0 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
