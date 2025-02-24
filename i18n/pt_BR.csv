@@ -3,3 +3,4 @@
 "Short Description","Curta Descrição"
 "Search","Buscar"
 "SKU","Código de Produto"
+"We have received a request to change the following information associated with your account at %store_name: %changes.","Recebemos um pedido para alterar a seguinte informação associada a sua conta na %store_name: %changes.",module,Magento_Customer
