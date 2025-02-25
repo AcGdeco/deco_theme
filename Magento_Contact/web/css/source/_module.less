@@ -51,9 +51,13 @@
     }
 
     .contact-index-index,
-    .sales-guest-form {
+    .sales-guest-form,
+    .customer-account-login,
+    .customer-account-create {
         .form.contact,
-        .form-orders-search {
+        .form-orders-search,
+        .form-login,
+        .form-create-account {
             .field.note.no-label {
                 text-align: justify;
             }
@@ -67,20 +71,80 @@
                     width: 100% !important;
                 }
             }
+
+            .actions-toolbar,
+            .fieldset:after {
+                margin-left: 0px !important;
+            }
+
+            .field.choice {     
+                flex-direction: row;
+                align-items: baseline;
+                justify-content: flex-start;
+
+                &::before {
+                    display: none;
+                }
+
+                .label {
+                    width: fit-content !important;
+                }
+            }
+
+            .legend {
+                margin: 0 0 10px;
+            }
         }
     }
 
     .contact-index-index {
-        .legend {
-            margin: 0 0 0 0;
-            margin-left: 0px !important;
+        .form-orders-search {
+            .legend {
+                margin: 0 0 0 0;
+                margin-left: 0px !important;
+            }
         }
     }
 
-    .sales-guest-form {
-        .form-orders-search {
-            .legend {
-                margin: 0 0 25px;
+    .customer-account-login {
+        .field.note,
+        .block-content p {
+            text-align: justify;
+        }
+
+        .form-login {
+            .action.remind {
+                text-decoration: none;
+
+                span {
+                    position: relative;
+                    font-weight: bolder;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        left: 0;
+                        bottom: 0;
+                        background-color: #1979c3;
+                        height: 1px;
+                        width: 100%;
+                        transform: scaleX(0);
+                        transition: all 300ms ease all ease-in;
+                        -webkit-transition: all 300ms ease 0.5s ease;
+                        -moz-transition: all 300ms ease 0.5s ease;
+                        -o-transition: all 300ms ease 0.5s ease;
+                        -ms-transition: all 300ms ease 0.5s ease;
+                        transition: all 300ms ease 0.5s ease;
+                        -webkit-transition: all 300ms ease;
+                        -o-transition: all 300ms ease;
+                        transition: all 300ms ease;
+                    }
+
+                    &:hover::after {
+                        transform: scaleX(1);
+                    }
+                }
             }
         }
     }
