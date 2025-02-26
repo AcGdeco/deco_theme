@@ -39,6 +39,170 @@
 
 & when (@media-common = true) {
 
+    .customer-address-form {
+        .nested {
+            .label {
+                span {
+                    font-weight: 700;
+                }
+
+                &::after {
+                    content: '*';
+                    color: #e02b27;
+                    font-size: 1.2rem;
+                    margin: 0 0 0 5px;
+                }
+            }
+
+            .field:nth-child(3) {
+                .label {
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .sales-order-print {
+        .footer-bottom {
+            display: none;
+        }
+
+        .action.nav-toggle {
+            display: none;
+        }
+    }
+
+    .table-wrapper.reviews {
+        .product-name {
+            a {
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: fit-content;
+            }
+        }
+    }
+
+    body.account {
+        .column.main {
+            > .block,
+            .order-details-items,
+            .table-wrapper.reviews {
+                border: solid 1px lightgray;
+                padding: 10px;
+
+                .block-title,
+                .order-title {
+                    border-bottom: solid 1px lightgray;
+                    margin-bottom: 15px;
+                    padding-bottom: 10px;
+                    display: flex;
+                    align-items: center;
+                    
+                    strong {
+                        font-weight: bolder !important;
+                        color: #AEA563;
+                        margin-top: 0px !important;
+                        margin-bottom: 0px !important;
+                    }
+                }
+            }
+
+            a {
+                font-weight: bolder;
+                text-decoration: none;
+                position: relative;
+                margin-right: 0px;
+
+                &:hover::after {
+                    transform: scaleX(1);
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    left: 0;
+                    bottom: 0;
+                    background-color: #006bb4;
+                    height: 2px;
+                    width: 100%;
+                    transform: scaleX(0);
+                    transition: all 300ms ease all ease-in;
+                    -webkit-transition: all 300ms ease 0.5s ease;
+                    -moz-transition: all 300ms ease 0.5s ease;
+                    -o-transition: all 300ms ease 0.5s ease;
+                    -ms-transition: all 300ms ease 0.5s ease;
+                    transition: all 300ms ease 0.5s ease;
+                    -webkit-transition: all 300ms ease;
+                    -o-transition: all 300ms ease;
+                    transition: all 300ms ease;
+                }
+            }
+
+            a:has(span) {
+                &::after {
+                    display: none;
+                }
+                
+                span { 
+                    text-decoration: none;
+                    background-image: none;
+                    background: #1979c3;
+                    border: 1px solid #1979c3;
+                    color: #fff;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                    font-weight: 700;
+                    padding: 3px 7px;
+                    font-size: 1.4rem;
+                    box-sizing: border-box;
+                    vertical-align: middle;
+                    margin-bottom: 1px;
+                    margin-top: 1px;
+
+                    &:hover {
+                        background: #006bb4;
+                        border: 1px solid #006bb4;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .table-wrapper.orders-history {
+                border: solid 1px #d1d1d1;
+
+                tr {
+                    border-bottom: solid 1px #d1d1d1;
+                }
+            }
+
+            .table {
+                td {
+                    vertical-align: middle;
+                }
+            }
+
+            .table-additional-addresses-items {
+                tr {
+                    border-bottom: 1px solid #d1d1d1;
+                }
+
+                td.col.actions {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
     .old-price,
     .special-price {
         .price-label {
@@ -988,6 +1152,8 @@
                     text-decoration: none;
                     position: relative;
                     color: #333;
+                    width: fit-content;
+                    display: block;
 
                     &:hover::after {
                         transform: scaleX(1);
@@ -1102,6 +1268,64 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .table-wrapper.orders-history {
+        .table-order-items {
+            tr {
+                padding: 0 20px;
+
+                td.col.actions {
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+
+    .order-products-toolbar.toolbar.bottom {
+        .toolbar-amount {
+            margin-bottom: 0px;
+        }
+
+        .limiter {
+            margin-bottom: 0px;
+        }
+    }
+
+    .customer-address-index .column.main .table-additional-addresses-items td.col.actions {
+        align-items: flex-start;
+    }
+
+    .customer-account-index {
+        .column.main {
+            .col.actions {
+                display: flex !important;
+                flex-direction: column;
+            }
+        }
+    }
+
+    .block-wishlist {
+        .product-item-name {
+            justify-content: flex-start;
+
+            span {
+                text-align: left;
+            }
+        }
+
+        .old-price {
+            .price {
+                font-size: 11px !important;
+            }
+        }
+
+        .price-as-configured {
+            align-items: start;
+        }
+    }
+
     .catalog-product-view {
         .fotorama__nav {
             .fotorama__nav__shaft {

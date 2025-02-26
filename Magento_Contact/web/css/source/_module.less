@@ -50,20 +50,13 @@
         }
     }
 
-    .contact-index-index,
-    .sales-guest-form,
-    .customer-account-login,
-    .customer-account-create,
-    .customer-account-createpassword {
-        .form.contact,
-        .form-orders-search,
-        .form-login,
-        .form-create-account,
-        .form.password.reset {
-            .field.note.no-label {
-                text-align: justify;
-            }
 
+    form {
+        .field.note.no-label {
+            text-align: justify;
+        }
+
+        .fieldset {
             .field {
                 display: flex;
                 flex-direction: column;
@@ -73,37 +66,43 @@
                     width: 100% !important;
                 }
             }
+        }
 
-            .actions-toolbar,
-            .fieldset:after {
-                margin-left: 0px !important;
+        .actions-toolbar,
+        .fieldset:after {
+            margin-left: 0px !important;
+        }
+
+        .field.choice {     
+            flex-direction: row;
+            align-items: baseline;
+            justify-content: flex-start;
+
+            &::before {
+                display: none;
             }
 
-            .field.choice {     
-                flex-direction: row;
-                align-items: baseline;
-                justify-content: flex-start;
-
-                &::before {
-                    display: none;
-                }
-
-                .label {
-                    width: fit-content !important;
-                }
+            .label {
+                width: fit-content !important;
             }
+        }
 
-            .legend {
-                margin: 0 0 10px;
-            }
+        .legend {
+            margin: 0 0 10px !important;
+        }
 
-            .fieldset {
-                margin: 0 0 20px;
-            }
-    
-            .g-recaptcha {
-                margin-top: 0px;
-                margin-bottom: 0px;
+        .fieldset {
+            margin: 0 0 20px;
+        }
+
+        .g-recaptcha {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        .field {
+            &::before {
+                display: none !important;
             }
         }
     }

@@ -28,7 +28,7 @@
 
     .block-collapsible-nav {
         .content {
-            .lib-css(background, @collapsible-nav-background);
+            .lib-css(background, #AEA563);
             padding: 15px 0;
         }
         .item {
@@ -39,8 +39,8 @@
 
             a,
             > strong {
-                border-left: 3px solid transparent;
-                .lib-css(color, @collapsible-nav-color);
+                border-left: 5px solid transparent;
+                .lib-css(color, white);
                 display: block;
                 padding: 5px 18px 5px 15px;
             }
@@ -49,7 +49,7 @@
                 text-decoration: none;
 
                 &:hover {
-                    .lib-css(background, @collapsible-nav-item-hover);
+                    .lib-css(background, #b0ab84);
                 }
             }
 
@@ -58,7 +58,7 @@
                 > strong {
                     .lib-css(border-color, @collapsible-nav-current-border-color);
                     .lib-css(color, @collapsible-nav-current-color);
-                    .lib-css(font-weight, @collapsible-nav-current-font-weight);
+                    .lib-css(font-weight, 900);
                 }
 
                 a {
@@ -95,9 +95,14 @@
     .block-collapsible-nav {
         left: 0;
         position: absolute;
-        top: -21px;
+        top: 0px;
         width: 100%;
         z-index: 5;
+
+        .block-collapsible-nav-title {
+            background-color: #AEA563;
+            color: white;
+        }
 
         .title {
             &:extend(.abs-toggling-title-mobile all);
