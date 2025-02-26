@@ -6,6 +6,7 @@
 "We have received a request to change the following information associated with your account at %store_name: %changes.","Recebemos um pedido para alterar a seguinte informação associada a sua conta na %store_name: %store_name: %changes."
 "We have received a request to change the following information associated with your account at %store_name: email.","Recebemos um pedido para alterar a seguinte informação associada a sua conta na %store_name: email."
 "We have received a request to change the following information associated with your account at %store_name: password.","Recebemos um pedido para alterar a seguinte informação associada a sua conta na %store_name: senha."
+"We have received a request to change the following information associated with your account at %store_name:  email, password.","Recebemos um pedido para alterar a seguinte informação associada a sua conta na %store_name: email, senha."
 "Customer Login","Login do cliente"
 "Create New Customer Account","Criar nova conta de cliente"
 "Show Password","Mostrar Senha"
