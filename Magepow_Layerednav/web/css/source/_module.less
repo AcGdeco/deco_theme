@@ -17,26 +17,13 @@
                 }
 
                 .layered_ajax_price_btn {
+                    .btn(
+                        @btn_padding:3px 6px
+                    );
                     display: none;
-                    background: #1979c3;
-                    border: 1px solid #1979c3;
-                    color: #fff;
-                    cursor: pointer;
                     justify-content: center;
                     align-items: center;
-                    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-                    font-weight: 700;
-                    padding: 3px 6px;
-                    font-size: 1.4rem;
-                    box-sizing: border-box;
-                    vertical-align: middle;
                     width: 9%;
-
-                    &:hover {
-                        background: #006bb4;
-                        border: 1px solid #006bb4;
-                        color: #fff;
-                    }
                 }
                 
                 .message-error {
@@ -249,35 +236,7 @@
 
         .filter-actions {
             a {
-                text-decoration: none;
-                position: relative;
-                color: #1979c3;
-                font-weight: bold;
-
-                &:hover::after {
-                    transform: scaleX(1);
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    display: block;
-                    left: 0;
-                    bottom: 0;
-                    background-color: #1979c3;
-                    height: 1px;
-                    width: 100%;
-                    transform: scaleX(0);
-                    transition: all 300ms eases all ease-in;
-                    -webkit-transition: all 300ms ease 0.5s ease;
-                    -moz-transition: all 300ms ease 0.5s ease;
-                    -o-transition: all 300ms ease 0.5s ease;
-                    -ms-transition: all 300ms ease 0.5s ease;
-                    transition: all 300ms ease 0.5s ease;
-                    -webkit-transition: all 300ms ease;
-                    -o-transition: all 300ms ease;
-                    transition: all 300ms ease;
-                }
+                .btn_und();
             }
         }
         
@@ -431,23 +390,7 @@
                 align-items: center;
 
                 strong {
-                    background: #1979c3;
-                    border: 1px solid #1979c3;
-                    color: white;
-                    padding: 7px 15px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    cursor: pointer;
-                    font-size: 1.4rem;
-                    border-radius: 3px;
-                    width: fit-content;
-
-                    &:hover {
-                        background: #006bb4;
-                        border: 1px solid #006bb4;
-                        color: #fff;
-                    }
+                    .btn();
                 }
             }
 
@@ -469,7 +412,7 @@
 
             .block-title.filter-title {
                 margin-bottom: 0px;
-                background: #1979c3;
+                background: @var_btn_background_color;
 
                 strong {
                     background: none;

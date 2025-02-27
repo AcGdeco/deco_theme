@@ -78,35 +78,10 @@
                 }
 
                 .product-item-link {
-                    text-decoration: none;
-                    position: relative;
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        display: block;
-                        left: 0;
-                        bottom: 0;
-                        background-color: black;
-                        height: 1px;
-                        width: 100%;
-                        transform: scaleX(0);
-                        transition: all 300ms eases all ease-in;
-                        -webkit-transition: all 300ms ease 0.5s ease;
-                        -moz-transition: all 300ms ease 0.5s ease;
-                        -o-transition: all 300ms ease 0.5s ease;
-                        -ms-transition: all 300ms ease 0.5s ease;
-                        transition: all 300ms ease 0.5s ease;
-                        -webkit-transition: all 300ms ease;
-                        -o-transition: all 300ms ease;
-                        transition: all 300ms ease;
-                    }
-
-                    &:hover {
-                        &::after {
-                            transform: scaleX(1);
-                        }
-                    }
+                    .btn_und(
+                        @color_txt_btn_und: black,
+                        @color_und_btn_und: black
+                    );
                 }
 
                 .actions-secondary {
@@ -188,37 +163,7 @@
                 }
 
                 .action.more {
-                    text-decoration: none;
-                    position: relative;
-                    color: #1979c3;
-                    font-weight: bold;
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        display: block;
-                        left: 0;
-                        bottom: 0;
-                        background-color: #1979c3;
-                        height: 1px;
-                        width: 100%;
-                        transform: scaleX(0);
-                        transition: all 300ms eases all ease-in;
-                        -webkit-transition: all 300ms ease 0.5s ease;
-                        -moz-transition: all 300ms ease 0.5s ease;
-                        -o-transition: all 300ms ease 0.5s ease;
-                        -ms-transition: all 300ms ease 0.5s ease;
-                        transition: all 300ms ease 0.5s ease;
-                        -webkit-transition: all 300ms ease;
-                        -o-transition: all 300ms ease;
-                        transition: all 300ms ease;
-                    }
-
-                    &:hover {
-                        &::after {
-                            transform: scaleX(1);
-                        }
-                    }
+                    .btn_und();
                 }
 
                 .product-item-description {
@@ -568,36 +513,11 @@
                     color: white;
                     
                     a {
-                        text-decoration: none;
-                        position: relative;
-                        color: white;
-
-                        &:after {
-                            content: "";
-                            position: absolute;
-                            display: block;
-                            left: 0;
-                            bottom: 0;
-                            background-color: #fff;
-                            height: 2px;
-                            width: 100%;
-                            transform: scaleX(0);
-                            transition: all 300ms eases all ease-in;
-                            -webkit-transition: all 300ms ease .5s ease;
-                            -moz-transition: all 300ms ease .5s ease;
-                            -o-transition: all 300ms ease .5s ease;
-                            -ms-transition: all 300ms ease .5s ease;
-                            transition: all 300ms ease .5s ease;
-                            -webkit-transition: all 300ms ease;
-                            -o-transition: all 300ms ease;
-                            transition: all 300ms ease;
-                        }
-
-                        &:hover {
-                            &:after {
-                                transform: scaleX(1);
-                            }
-                        }
+                        .btn_und(
+                            @color_txt_btn_und: white,
+                            @color_und_btn_und: white,
+                            @font_weight_btn_und: 400
+                        );
                     }
                 }
             }
@@ -878,24 +798,8 @@
                     display: none;
 
                     a.action.compare {
-                        background: #1979c3;
-                        border: 1px solid #1979c3;
-                        color: #fff;
-                        cursor: pointer;
-                        display: inline-block;
-                        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-                        font-weight: 700;
-                        padding: 7px 15px;
-                        font-size: 1.4rem;
-                        box-sizing: border-box;
-                        vertical-align: middle;
+                        .btn();
                         border-radius: 0px 0px 30px 30px;
-
-                        &:hover {
-                            background: #006bb4;
-                            border: 1px solid #006bb4;
-                            text-decoration: none;
-                        }
                     }
                 }
             }
@@ -924,36 +828,10 @@
                             font-size: 20px;
                         }
                         a {
-                            text-decoration: none;
-                            position: relative;
-
-                            &:after {
-                                content: "";
-                                position: absolute;
-                                display: block;
-                                left: 0;
-                                bottom: 0;
-                                background-color: #fff;
-                                height: 2px;
-                                width: 100%;
-                                transform: scaleX(0);
-                                transition: all 300ms eases all ease-in;
-                                -webkit-transition: all 300ms ease .5s ease;
-                                -moz-transition: all 300ms ease .5s ease;
-                                -o-transition: all 300ms ease .5s ease;
-                                -ms-transition: all 300ms ease .5s ease;
-                                transition: all 300ms ease .5s ease;
-                                -webkit-transition: all 300ms ease;
-                                -o-transition: all 300ms ease;
-                                transition: all 300ms ease;
-                            }
-
-                            &:hover {
-                                &:after {
-                                    transform: scaleX(1);
-                                    background-color: white;
-                                }
-                            }
+                            .btn_und(
+                                @color_txt_btn_und: white,
+                                @color_und_btn_und: white,
+                            );
                         }
                     }
                 }
@@ -1011,39 +889,19 @@
                         }
             
                         a {
-                            color: black;
-                            font-weight: normal;
-                            text-decoration: none;
-                            background: #1979c3;
-                            border: 1px solid #1979c3;
-                            color: #fff;
-                            cursor: pointer;
-                            display: inline-block;
-                            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-                            font-weight: 700;
-                            padding: 7px 15px;
-                            font-size: 1.4rem;
-                            box-sizing: border-box;
-                            vertical-align: middle;
+                            .btn();
                             width: 100%;
-                            text-align: center;
                             white-space: nowrap;
-
-                            &:hover {
-                                background: #006bb4;
-                                border: 1px solid #006bb4;
-                            }
                         }
+                        
                         .logout {
                             margin-bottom: 0px;
 
                             a {
-                                background-color: #bc6060;
-
-                                &:hover {
-                                    background: #bd5353;
-                                    border: 1px solid #bd5353;
-                                }
+                                .btn(
+                                    @btn_background_color: #bc6060,
+                                    @btn_background_color_hover: #bd5353
+                                );
                             }
 
                             &::before {
@@ -1095,35 +953,11 @@
                 }
 
                 .action.advanced {
-                    text-decoration: none;
-                    position: relative;
-
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        display: block;
-                        left: 0;
-                        bottom: 0;
-                        background-color: #fff;
-                        height: 2px;
-                        width: 100%;
-                        transform: scaleX(0);
-                        transition: all 300ms eases all ease-in;
-                        -webkit-transition: all 300ms ease .5s ease;
-                        -moz-transition: all 300ms ease .5s ease;
-                        -o-transition: all 300ms ease .5s ease;
-                        -ms-transition: all 300ms ease .5s ease;
-                        transition: all 300ms ease .5s ease;
-                        -webkit-transition: all 300ms ease;
-                        -o-transition: all 300ms ease;
-                        transition: all 300ms ease;
-                    }
-
-                    &:hover {
-                        &:after {
-                            transform: scaleX(1);
-                        }
-                    }
+                    .btn_und(
+                        @font_weight_btn_und: 400,
+                        @color_txt_btn_und: white,
+                        @color_und_btn_und: white
+                    );
 
                     &:hover {
                         color: rgb(236, 236, 236);
