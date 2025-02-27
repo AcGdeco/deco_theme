@@ -337,7 +337,7 @@
 
             strong {
                 font-weight: bolder;
-                color: #6089bc;
+                color: @var_text_color_title_widget_list;
                 font-size: 20px;
 
                 &::after {
@@ -345,7 +345,7 @@
                     display: block;
                     width: 100%;
                     height: 1px;
-                    background-color: #6089bc;
+                    background-color: @var_text_color_title_widget_list;
                 }
             }
         }
@@ -462,7 +462,7 @@
     //  ---------------------------------------------
 
     .page-footer {
-        .lib-css(background-color, #6089bc);
+        .lib-css(background-color, @var_bg_footer);
         margin-top: auto;
         
         .footer {
@@ -479,8 +479,8 @@
             }
 
             .content {
-                background-color: black;
-                color: white;
+                background-color: @var_bg_color_block_newsletter;
+                color: @var_text_color_newsletter_promotions;
                 padding: 20px;
                 margin-bottom: 5px;
                 border-radius: 2px;
@@ -492,7 +492,7 @@
                         font-size: 20px;
                         text-transform: uppercase;
                         font-weight: 900;
-                        color: #6089bc;
+                        color: @var_text_color_newsletter;
                     }
                 }
             }
@@ -655,7 +655,7 @@
             padding: 10px 20px;
 
             .title-footer-bottom {
-                color: #6089bc;
+                color: @var_text_color_footer_bottom;
                 font-weight: bolder;
                 font-size: 11px;
 
@@ -663,7 +663,7 @@
                     content: '';
                     width: 100%;
                     height: 1px;
-                    background-color: #6089bc;
+                    background-color: @var_text_color_footer_bottom;
                     display: block;
                 }
             }
@@ -740,12 +740,12 @@
 
         .panel.wrapper {
             border-bottom: 1px solid @secondary__color;
-            background-color: black;
-            color: white;
+            background-color: @var_bg_header_panel_wrapper;
+            color: @var_text_header_panel_wrapper;
         }
 
         .header-content {
-            background-color: #6089bc;
+            background-color: @var_bg_header;
         }
 
         .minicart-wrapper {
@@ -849,7 +849,7 @@
                 }
 
                 .greet.welcome {
-                    color: #6089bc;
+                    color: @var_text_color_welcome;
                     font-weight: bolder;
                 }
 
@@ -1109,7 +1109,7 @@
 
     .page-header {
         .header-content {
-            background-color: #6089bc;
+            background-color: @var_bg_header;
 
             .header.content {
                 display: flex;
@@ -1249,7 +1249,7 @@
                 align-items: center;
 
                 .greet.welcome {
-                    color: #6089bc;
+                    color: @var_text_color_welcome;
                     font-weight: bolder;
                     list-style-type: none;
                 }

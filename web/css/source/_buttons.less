@@ -27,6 +27,16 @@
 
     .action.primary,
     .action-primary {
-        .lib-button-primary();
+        .lib-button-primary(
+            @_button-color: @var_button-color,
+            @_button-background: @var_button-background,
+            @_button-border: @var_button-border,
+            @_button-color-hover: @var_button-color-hover,
+            @_button-background-hover: @var_button-background-hover,
+            @_button-border-hover: @var_button-border-hover,
+            @_button-color-active: @var_button-color-active,
+            @_button-background-active: @var_button-background-active,
+            @_button-border-active: @var_button-border-active
+        );
     }
 }

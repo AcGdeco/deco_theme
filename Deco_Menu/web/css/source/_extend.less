@@ -1,7 +1,7 @@
 .deco-menu-wrapper {
     .deco-menu {
         .btn-menu {
-            background-color: #006bb4;
+            background-color: @var_btn_background_color;
             color: white;
 
             &::before {
@@ -9,15 +9,14 @@
             }
 
             &:hover {
-                background-color: #006bb4;
-                opacity: 0.8;
+                background-color: @var_btn_background_color_hover;
             }
         }
 
         .level-0 {
             li {
                 a {
-                    background-color: #006bb4;
+                    background-color: @var_btn_background_color;
                     color: white;
                     height: 30px;
 

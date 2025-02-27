@@ -100,15 +100,15 @@
     .price-box {
         .price {
             font-weight: 700 !important;
-            color: var(--bi-highlight-text-color);
+            color: @var_card_price;
         }
     }
 }
 
 .discounts {
     .percentage {
-        background-color: var(--bi-highlight-text-color);
-        color: white;
+        background-color: @var_bg_pix_percentage;
+        color: @var_text_pix_percentage;
         border-radius: 100%;
         font-size: 1.4rem;
         padding: 0px 2px;
@@ -175,9 +175,16 @@
     font-weight: 400;
 
     strong {
-        color: var(--bi-highlight-text-color);
-        font-weight: var(--bi-highlight-text-font-weight);
+        font-weight: 700;
         font-size: 15px;
+    }
+
+    strong:nth-child(1) {
+        color: @var_card_qtd;
+    }
+
+    strong:nth-child(2) {
+        color: @var_card_parcel;
     }
 }
 
@@ -187,8 +194,8 @@
 
     li.item {
         strong {
-            color: var(--bi-highlight-text-color);
-            font-weight: var(--bi-highlight-text-font-weight);
+            color: @var_pix_price;
+            font-weight: 700;
         }
     }
 }
@@ -244,8 +251,16 @@
                 }
 
                 strong {
-                    color: var(--bi-highlight-text-color);
-                    font-weight: var(--bi-highlight-text-font-weight);
+                    font-weight: 700;
+                    font-size: 15px;
+                }
+            
+                strong:nth-child(1) {
+                    color: @var_card_qtd;
+                }
+            
+                strong:nth-child(2) {
+                    color: @var_card_parcel;
                 }
             }
         }
