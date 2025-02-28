@@ -29,7 +29,7 @@
                     <?php $index = 0 ?>
                     <?php foreach ($block->getItems() as $item) :?>
                         <?php if ($index++ == 0) :?>
-                            <th scope="row" class="cell label remove"><span><?= $block->escapeHtml(__('Remove Product')) ?></span></th>
+                            <th scope="row" class="cell label remove hidden-print"><span><?= $block->escapeHtml(__('Remove Product')) ?></span></th>
                         <?php endif; ?>
                         <td class="cell remove product hidden-print">
                             <?php $compareHelper = $this->helper(Magento\Catalog\Helper\Product\Compare::class);?>
