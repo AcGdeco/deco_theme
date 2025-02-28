@@ -208,26 +208,22 @@
     }
 }
 
+.catalog-category-view {
+    #installments-accordion {
+        display: none;
+    }
+}
+
 #installments-accordion {
     margin-top: 30px;
 
     .options {
         margin-bottom: 5px;
     }
-
-    [data-role="collapsible"].active [data-role="trigger"] {
-        border-radius: 4px 4px 0 0;
-    }
-
+   
     [data-role="trigger"] {
-        display: block;
-        background-color: var(--bi-primary-color);
-        border-radius: 4px;
-        color: @color-white;
-        cursor: pointer;
-        text-align: center;
+        .btn();
         text-transform: uppercase;
-        padding: 8px 16px;
 
         h5 {
             margin: 0;

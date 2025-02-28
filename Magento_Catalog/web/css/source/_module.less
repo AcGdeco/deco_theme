@@ -327,6 +327,10 @@
 
             .product-item-actions {
                 text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
             }
 
             .box-tocart {
@@ -671,7 +675,7 @@
                     margin-bottom: 0px;
                     display: flex;
                     justify-content: flex-start;
-                    align-items: center;
+                    align-items: flex-end;
 
                     .field.qty {
                         display: flex;
@@ -1346,8 +1350,20 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .review-customer-view{
+        .reviews-actions {
+            flex-direction: column;
+        }
+    }
+
     .wishlist-index-index {
         .column.main {
+            .product-item-actions {
+                a {
+                    margin-top: 1px !important;
+                }
+            }
+
             .pager {
                 display: flex;
                 align-items: center;
