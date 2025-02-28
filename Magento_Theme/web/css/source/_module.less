@@ -54,6 +54,16 @@
         .lib-css(background-color, @page__background-color);
     }
 
+    .absolute-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-weight: bolder;
+        font-size: 11px;
+        color: @var_text_color_absolute_footer;
+    }
+
     .products-grid, .catalog-product-view {
         .product-reviews-summary.no-rating {
             .rating-result {
@@ -652,7 +662,7 @@
             width: auto;
             display: flex;
             justify-content: space-between;
-            padding: 10px 20px;
+            padding: 10px 20px 0 20px;
 
             .title-footer-bottom {
                 color: @var_text_color_footer_bottom;
@@ -1064,6 +1074,11 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .footer-bottom-seguranca {
+        margin-bottom: 10px;
+    }
+
     .products-list {
         .product-items {
             display: block;
