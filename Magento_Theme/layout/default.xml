@@ -17,8 +17,7 @@
         </referenceBlock>
         <referenceContainer name="header.container">
             <container name="header.content" htmlTag="div" htmlClass="header-content"/>
-            <container name="header.compare" htmlTag="div" htmlClass="header-compare 
-            hidden-print" after="-">
+            <container name="header.compare" htmlTag="div" htmlClass="header-compare hidden-print" after="-">
                 <container name="compare" htmlTag="div" htmlClass="compare">
                     <block class="Magento\Framework\View\Element\Template" name="catalog.compare.link" template="Magento_Catalog::product/compare/link.phtml" after="-">
                         <arguments>
