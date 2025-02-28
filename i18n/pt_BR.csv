@@ -16,3 +16,4 @@
 "Ship Here","Entregar Aqui"
 "New Address","Novo endereço"
 "Message from %customer_name:","Mensagem de %customer_name:"
+"You have no stored payment methods.","Você não tem métodos de pagamento armazenados.",module,Magento_Vault
