@@ -172,6 +172,63 @@
         }
     }
 
+    .catalog-product_compare-index {
+        .action.print.hidden-print {
+            text-decoration: none;
+
+            span {
+                .btn_und();
+            }
+        }
+
+        .product-reviews-summary.short {    
+            margin: 0;
+        }
+
+        .product-reviews-summary.no-rating {
+            .rating-result {
+                > span {
+                    width: 0%;
+                }
+            }
+        }
+
+        .attribute.value {
+            img {
+                display: none !important;
+            }
+        }
+        
+        .cell.product.info {
+            .actions-secondary {
+                margin-top: 0px;
+            }
+
+            .product-item-name {
+                margin: 5px 0;
+
+                a {
+                    font-weight: bold;
+                    .btn_und(
+                        @color_txt_btn_und: black,
+                        @color_und_btn_und: black,
+                    );
+                }
+            }
+
+            .discounts {
+                ul {
+                    margin-bottom: 5px;
+                }
+            }
+
+            .action.view,
+            .action.add {
+                display: none;
+            }
+        }
+    }
+
     .wishlist-shared-index {
         .table.data.wishlist {
             .product.name {

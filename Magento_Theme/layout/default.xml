@@ -17,7 +17,8 @@
         </referenceBlock>
         <referenceContainer name="header.container">
             <container name="header.content" htmlTag="div" htmlClass="header-content"/>
-            <container name="header.compare" htmlTag="div" htmlClass="header-compare" after="-">
+            <container name="header.compare" htmlTag="div" htmlClass="header-compare 
+            hidden-print" after="-">
                 <container name="compare" htmlTag="div" htmlClass="compare">
                     <block class="Magento\Framework\View\Element\Template" name="catalog.compare.link" template="Magento_Catalog::product/compare/link.phtml" after="-">
                         <arguments>
@@ -52,7 +53,7 @@
         </referenceContainer>
         <referenceBlock name="footer_links" remove="true"/>
         <referenceContainer name="page.wrapper">
-            <container name="footer.bottom" htmlTag="div" htmlClass="footer-bottom" after="footer">
+            <container name="footer.bottom" htmlTag="div" htmlClass="footer-bottom hidden-print" after="footer">
                 <container name="footer.bottom.forms" htmlTag="div" htmlClass="footer-bottom-forms" after="footer">
                     <block name="footer.forms" template="Magento_Theme::footer_bottom.phtml" />
                 </container>
