@@ -1,2 +1,2 @@
 # deco_theme
-Tema base a ser utilizado no Magento 2
+Tema a ser utilizado no Magento 2 na Loja Deco
